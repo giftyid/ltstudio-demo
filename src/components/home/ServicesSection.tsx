@@ -1,11 +1,17 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Container from '../ui/Container'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 type Service = {
   id: number
-  title: string
-  description: string
+  titleVi: string
+  titleEn: string
+  descriptionVi: string
+  descriptionEn: string
   icon: React.ReactNode
   slug: string
 }
@@ -13,8 +19,10 @@ type Service = {
 const services: Service[] = [
   {
     id: 1,
-    title: "Sản xuất nội dung",
-    description: "Sản xuất nội dung video và âm thanh chất lượng cao cho nhiều nền tảng và mục đích khác nhau.",
+    titleVi: "Sản xuất nội dung",
+    titleEn: "Content Production",
+    descriptionVi: "Sản xuất nội dung video và âm thanh chất lượng cao cho nhiều nền tảng và mục đích khác nhau.",
+    descriptionEn: "High-quality video and audio content production for multiple platforms and purposes.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 18.5V19.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -27,8 +35,10 @@ const services: Service[] = [
   },
   {
     id: 2,
-    title: "Chiến lược truyền thông",
-    description: "Lập kế hoạch và phát triển chiến lược truyền thông toàn diện cho thương hiệu và tổ chức.",
+    titleVi: "Chiến lược truyền thông",
+    titleEn: "Media Strategy",
+    descriptionVi: "Lập kế hoạch và phát triển chiến lược truyền thông toàn diện cho thương hiệu và tổ chức.",
+    descriptionEn: "Plan and develop comprehensive media strategies for brands and organizations.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22H15C20 22 22 20 22 15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -39,8 +49,10 @@ const services: Service[] = [
   },
   {
     id: 3,
-    title: "Marketing số",
-    description: "Dịch vụ tiếp thị kỹ thuật số có mục tiêu để tối đa hóa phạm vi tiếp cận và tương tác cho nội dung của bạn.",
+    titleVi: "Marketing số",
+    titleEn: "Digital Marketing",
+    descriptionVi: "Dịch vụ tiếp thị kỹ thuật số có mục tiêu để tối đa hóa phạm vi tiếp cận và tương tác cho nội dung của bạn.",
+    descriptionEn: "Targeted digital marketing services to maximize reach and engagement for your content.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 12.99V15C2 20 4 22 9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -53,23 +65,31 @@ const services: Service[] = [
 ]
 
 const ServicesSection = () => {
+  const { language } = useLanguage()
+  
   return (
     <section className="py-24 bg-secondary">
       <Container>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">Dịch vụ của chúng tôi</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">
+          {translations.servicesSection[language].title}
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div key={service.id} className="p-6 bg-white rounded-lg shadow-sm">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="mb-4 text-gray-600">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-2">
+                {language === 'vi' ? service.titleVi : service.titleEn}
+              </h3>
+              <p className="mb-4 text-gray-600">
+                {language === 'vi' ? service.descriptionVi : service.descriptionEn}
+              </p>
               <Link 
                 href={`/services/${service.slug}`} 
                 className="text-accent font-medium hover:underline transition-colors"
               >
-                Tìm hiểu thêm &rarr;
+                {translations.featuredProducts[language].learnMore} &rarr;
               </Link>
             </div>
           ))}

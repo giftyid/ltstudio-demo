@@ -1,9 +1,21 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Button from '../ui/Button'
 import Container from '../ui/Container'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 const HeroSection = () => {
+  const { language } = useLanguage()
+  
+  const features = [
+    { icon: '🎬', text: translations.hero[language].creative },
+    { icon: '🚀', text: translations.hero[language].professional },
+    { icon: '💡', text: translations.hero[language].innovative }
+  ]
+  
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden py-20">
       {/* Video background (placeholder) */}
@@ -20,7 +32,7 @@ const HeroSection = () => {
           The Soul of Wind Group
         </h1>
         <p className="text-base sm:text-xl md:text-2xl max-w-xs sm:max-w-xl md:max-w-3xl mx-auto mb-6 sm:mb-8 animate-fade-in opacity-90">
-          Sáng tạo những trải nghiệm truyền thông đắm chìm, thu hút và truyền cảm hứng cho khán giả trên toàn thế giới.
+          {translations.hero[language].slogan}
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center">
           <Button 
@@ -33,7 +45,7 @@ const HeroSection = () => {
               </svg>
             }
           >
-            Khám phá sản phẩm
+            {translations.hero[language].exploreProducts}
           </Button>
           <Button 
             href="/about"
@@ -41,17 +53,13 @@ const HeroSection = () => {
             size="lg"
             className="text-white border-white hover:bg-white/10"
           >
-            Về chúng tôi
+            {translations.hero[language].aboutUs}
           </Button>
         </div>
         
         {/* Feature highlights */}
         <div className="hidden sm:flex justify-center space-x-6 md:space-x-12 mt-12 md:mt-16">
-          {[
-            { icon: '🎬', text: 'Sáng tạo' },
-            { icon: '🚀', text: 'Chuyên nghiệp' },
-            { icon: '💡', text: 'Đổi mới' }
-          ].map((item, index) => (
+          {features.map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <span className="text-3xl mb-2">{item.icon}</span>
               <span className="text-sm md:text-base font-medium">{item.text}</span>

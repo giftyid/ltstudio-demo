@@ -92,4 +92,34 @@
   .tap-highlight-transparent {
     -webkit-tap-highlight-color: transparent;
   }
+}
+
+/* Language transition effects */
+.lang-transition {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.lang-transition-enter {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.lang-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lang-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lang-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* General transition for elements when language changes */
+h1, h2, h3, h4, p, a, button, span, li {
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 } 

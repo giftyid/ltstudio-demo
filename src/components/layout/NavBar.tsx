@@ -5,31 +5,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn, useClickOutside, useWindowSize } from '@/lib/utils'
 import Container from '../ui/Container'
-
-const navLinks = [
-  { name: 'Trang chủ', href: '/' },
-  { name: 'Giới thiệu', href: '/about' },
-  { 
-    name: 'Sản phẩm', 
-    href: '/products',
-    submenu: [
-      { name: 'Video Marketing', href: '/products/video-marketing' },
-      { name: 'Thiết kế đồ họa', href: '/products/graphic-design' },
-      { name: 'Sản xuất phim', href: '/products/film-production' },
-    ]
-  },
-  { 
-    name: 'Dịch vụ', 
-    href: '/services',
-    submenu: [
-      { name: 'Tư vấn thương hiệu', href: '/services/brand-consulting' },
-      { name: 'Sản xuất nội dung', href: '/services/content-production' },
-      { name: 'Digital Marketing', href: '/services/digital-marketing' },
-    ]
-  },
-  { name: 'Tin tức', href: '/news' },
-  { name: 'Liên hệ', href: '/contact' },
-]
+import LanguageToggle from '../ui/LanguageToggle'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -38,6 +16,33 @@ const NavBar = () => {
   const pathname = usePathname()
   const navRef = useRef<HTMLDivElement>(null)
   const { width } = useWindowSize()
+  const { language } = useLanguage()
+  
+  // Get translated nav links
+  const navLinks = [
+    { name: translations.nav[language].home, href: '/' },
+    { name: translations.nav[language].about, href: '/about' },
+    { 
+      name: translations.nav[language].products, 
+      href: '/products',
+      submenu: [
+        { name: translations.products[language].videoMarketing, href: '/products/video-marketing' },
+        { name: translations.products[language].graphicDesign, href: '/products/graphic-design' },
+        { name: translations.products[language].filmProduction, href: '/products/film-production' },
+      ]
+    },
+    { 
+      name: translations.nav[language].services, 
+      href: '/services',
+      submenu: [
+        { name: translations.services[language].brandConsulting, href: '/services/brand-consulting' },
+        { name: translations.services[language].contentProduction, href: '/services/content-production' },
+        { name: translations.services[language].digitalMarketing, href: '/services/digital-marketing' },
+      ]
+    },
+    { name: translations.nav[language].news, href: '/news' },
+    { name: translations.nav[language].contact, href: '/contact' },
+  ]
   
   // Close menu when screen size changes to desktop
   useEffect(() => {
@@ -142,42 +147,49 @@ const NavBar = () => {
                 )}
               </div>
             ))}
+            
+            {/* Language Toggle Button */}
+            <LanguageToggle type="flag" />
           </div>
           
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 tap-highlight-transparent"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            <svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="transition-transform duration-300"
+          {/* Mobile Menu Button and Language Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle type="flag" />
+            
+            <button 
+              className="p-2 tap-highlight-transparent"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? (
-                <path 
-                  d="M18 6L6 18M6 6L18 18" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              ) : (
-                <path 
-                  d="M3 12H21M3 6H21M3 18H21" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                />
-              )}
-            </svg>
-          </button>
+              <svg 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300"
+              >
+                {mobileMenuOpen ? (
+                  <path 
+                    d="M18 6L6 18M6 6L18 18" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                ) : (
+                  <path 
+                    d="M3 12H21M3 6H21M3 18H21" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </nav>
       </Container>
       

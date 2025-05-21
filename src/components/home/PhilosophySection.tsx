@@ -1,7 +1,13 @@
+'use client'
+
 import React from 'react'
 import Container from '../ui/Container'
+import { useLanguage } from '@/lib/LanguageContext'
+import { translations } from '@/lib/translations'
 
 const PhilosophySection = () => {
+  const { language } = useLanguage()
+  
   const philosophies = [
     {
       icon: (
@@ -11,8 +17,8 @@ const PhilosophySection = () => {
           <path d="M12 8H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: 'Sáng tạo',
-      description: 'Luôn tìm tòi, đổi mới và khám phá những khả năng mới trong lĩnh vực truyền thông.'
+      title: translations.philosophy[language].creative.title,
+      description: translations.philosophy[language].creative.description
     },
     {
       icon: (
@@ -20,8 +26,8 @@ const PhilosophySection = () => {
           <path d="M20 7L9 18L4 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: 'Chất lượng',
-      description: 'Duy trì tiêu chuẩn cao nhất trong mọi khía cạnh của công việc.'
+      title: translations.philosophy[language].quality.title,
+      description: translations.philosophy[language].quality.description
     },
     {
       icon: (
@@ -33,8 +39,8 @@ const PhilosophySection = () => {
           <path d="M15.41 6.51L8.59 10.49" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      title: 'Hợp tác',
-      description: 'Làm việc cùng nhau để tạo ra thành quả lớn hơn tổng các thành phần riêng lẻ.'
+      title: translations.philosophy[language].collaboration.title,
+      description: translations.philosophy[language].collaboration.description
     },
   ]
 
@@ -42,12 +48,9 @@ const PhilosophySection = () => {
     <section className="py-24 bg-secondary">
       <Container size="md">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8">Triết lý của chúng tôi</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8">{translations.philosophy[language].title}</h2>
           <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-12">
-            Chúng tôi tin vào sức mạnh chuyển đổi của truyền thông để kết nối, truyền cảm hứng và 
-            tác động đến mọi người. Cách tiếp cận của chúng tôi kết hợp giữa sự xuất sắc về kỹ thuật 
-            và tầm nhìn nghệ thuật, tạo ra những trải nghiệm có ý nghĩa, đồng cảm với khán giả 
-            và đáp ứng mong muốn của khách hàng.
+            {translations.philosophy[language].description}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {philosophies.map((item, index) => (
