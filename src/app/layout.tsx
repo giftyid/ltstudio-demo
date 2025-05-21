@@ -4,12 +4,14 @@ import './globals.css';
 import NavBar from '@/components/layout/NavBar';
 import Footer from '@/components/layout/Footer';
 import { LanguageProvider } from '@/lib/LanguageContext';
+import SocialButtons from '@/components/ui/SocialButtons';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'The Soul of Wind Group',
-  description: 'Professional media company crafting immersive experiences',
+  title: 'Mirai Ongaku | Music Distribution Platform',
+  description: 'Your music everywhere. Professional digital music distribution service for independent artists and labels',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 };
 
@@ -28,6 +30,8 @@ export default function RootLayout({
           <NavBar />
           <main className="pt-20">{children}</main>
           <Footer />
+          <SocialButtons />
+          <ScrollToTop />
         </LanguageProvider>
       </body>
     </html>

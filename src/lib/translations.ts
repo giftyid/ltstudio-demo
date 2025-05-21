@@ -153,14 +153,316 @@ export const translations = {
   // Home page - Call to Action Section
   callToAction: {
     vi: {
-      title: 'Sẵn sàng hợp tác?',
-      description: 'Hãy liên hệ với chúng tôi ngay hôm nay để thảo luận về dự án của bạn.',
-      contactUs: 'Liên hệ ngay'
+      title: 'Sẵn sàng phát hành âm nhạc của bạn?',
+      description: 'Phân phối nhạc của bạn đến các nền tảng trực tuyến hàng đầu thế giới chỉ với vài bước đơn giản.',
+      contactUs: 'Đăng ký ngay'
     },
     en: {
-      title: 'Ready to Collaborate?',
-      description: 'Get in touch with us today to discuss your project.',
-      contactUs: 'Contact Us Now'
+      title: 'Ready to Release Your Music?',
+      description: 'Distribute your music to the world\'s leading streaming platforms in just a few simple steps.',
+      contactUs: 'Sign Up Now'
+    }
+  },
+  
+  // Home page - How It Works Section
+  howItWorks: {
+    vi: {
+      title: 'Cách Thức Hoạt Động',
+      subtitle: 'Quá trình phân phối nhạc của bạn đơn giản và hiệu quả.',
+      cta: 'Xem Các Gói',
+      step1: {
+        title: 'Tải Nhạc Lên',
+        description: 'Tải nhạc và thông tin của bạn lên nền tảng của chúng tôi.'
+      },
+      step2: {
+        title: 'Kiểm Duyệt',
+        description: 'Chúng tôi kiểm tra chất lượng và đảm bảo mọi thứ đều hoàn hảo.'
+      },
+      step3: {
+        title: 'Phân Phối',
+        description: 'Chúng tôi phân phối nhạc của bạn đến hơn 200 nền tảng trên toàn cầu.'
+      },
+      step4: {
+        title: 'Phân Tích & Thanh Toán',
+        description: 'Theo dõi hiệu suất và nhận thanh toán của bạn đúng hạn.'
+      }
+    },
+    en: {
+      title: 'How It Works',
+      subtitle: 'Your music distribution process is simple and efficient.',
+      cta: 'View Plans',
+      step1: {
+        title: 'Upload Music',
+        description: 'Upload your music and information to our platform.'
+      },
+      step2: {
+        title: 'Review',
+        description: 'We check for quality and ensure everything is perfect.'
+      },
+      step3: {
+        title: 'Distribution',
+        description: 'We distribute your music to over 200 platforms worldwide.'
+      },
+      step4: {
+        title: 'Analytics & Payment',
+        description: 'Track performance and receive your payments on time.'
+      }
+    }
+  },
+  
+  // Home page - Distribution Plans Section
+  distributionPlans: {
+    vi: {
+      title: 'Các Gói Phân Phối',
+      subtitle: 'Chọn gói phù hợp với nhu cầu phân phối âm nhạc của bạn',
+      cta: 'Bắt Đầu Ngay',
+      monthly: 'Hàng Tháng',
+      yearly: 'Hàng Năm',
+      mostPopular: 'Phổ Biến Nhất',
+      plans: [
+        {
+          name: 'Cơ Bản',
+          price: '9.99',
+          yearlyPrice: '99.99',
+          description: 'Hoàn hảo cho nghệ sĩ mới',
+          features: [
+            'Tối đa 2 bản phát hành mỗi năm',
+            'Phân phối tới 50+ nền tảng',
+            'Phân tích cơ bản',
+            'Hỗ trợ tiêu chuẩn',
+            'Chia sẻ doanh thu 85%'
+          ]
+        },
+        {
+          name: 'Chuyên Nghiệp',
+          price: '19.99',
+          yearlyPrice: '199.99',
+          description: 'Dành cho nghệ sĩ đang phát triển',
+          features: [
+            'Phát hành không giới hạn',
+            'Phân phối tới 150+ nền tảng',
+            'Phân tích nâng cao',
+            'Hỗ trợ ưu tiên',
+            'Chia sẻ doanh thu 90%',
+            'Liên kết pre-save'
+          ]
+        },
+        {
+          name: 'Cao Cấp',
+          price: '29.99',
+          yearlyPrice: '299.99',
+          description: 'Dành cho nghệ sĩ đã thành danh',
+          features: [
+            'Phát hành không giới hạn',
+            'Phân phối tới 200+ nền tảng',
+            'Phân tích & thông tin chuyên sâu',
+            'Hỗ trợ 24/7',
+            'Chia sẻ doanh thu 100%',
+            'Công cụ marketing',
+            'Đề xuất vào playlist'
+          ]
+        }
+      ]
+    },
+    en: {
+      title: 'Distribution Plans',
+      subtitle: 'Choose the right plan for your music distribution needs',
+      cta: 'Get Started',
+      monthly: 'Monthly',
+      yearly: 'Yearly',
+      mostPopular: 'Most Popular',
+      plans: [
+        {
+          name: 'Basic',
+          price: '9.99',
+          yearlyPrice: '99.99',
+          description: 'Perfect for new artists',
+          features: [
+            'Up to 2 releases per year',
+            'Distribution to 50+ platforms',
+            'Basic analytics',
+            'Standard support',
+            '85% revenue share'
+          ]
+        },
+        {
+          name: 'Pro',
+          price: '19.99',
+          yearlyPrice: '199.99',
+          description: 'For growing artists',
+          features: [
+            'Unlimited releases',
+            'Distribution to 150+ platforms',
+            'Advanced analytics',
+            'Priority support',
+            '90% revenue share',
+            'Pre-save links'
+          ]
+        },
+        {
+          name: 'Premium',
+          price: '29.99',
+          yearlyPrice: '299.99',
+          description: 'For established artists',
+          features: [
+            'Unlimited releases',
+            'Distribution to 200+ platforms',
+            'Premium analytics & insights',
+            '24/7 dedicated support',
+            '100% revenue share',
+            'Marketing tools',
+            'Playlist pitching'
+          ]
+        }
+      ]
+    }
+  },
+  
+  // Home page - Features Section
+  features: {
+    vi: {
+      title: 'Tính Năng Nền Tảng',
+      subtitle: 'Mọi thứ bạn cần để thành công trong thế giới âm nhạc kỹ thuật số',
+      items: [
+        {
+          icon: '🌐',
+          title: 'Phạm Vi Toàn Cầu',
+          description: 'Phân phối âm nhạc của bạn đến hơn 200 nền tảng bao gồm Spotify, Apple Music, TikTok và nhiều hơn nữa.'
+        },
+        {
+          icon: '📊',
+          title: 'Phân Tích Nâng Cao',
+          description: 'Theo dõi hiệu suất của bạn với thống kê chi tiết và thông tin chi tiết về người nghe và lượt phát của bạn.'
+        },
+        {
+          icon: '💰',
+          title: 'Tiền Bản Quyền Rõ Ràng',
+          description: 'Nhận 100% tiền bản quyền với gói cao cấp của chúng tôi. Không có phí ẩn hoặc chia sẻ phức tạp.'
+        },
+        {
+          icon: '🔄',
+          title: 'Cập Nhật Tự Động',
+          description: 'Cập nhật nhạc và metadata của bạn trên tất cả các nền tảng chỉ với một cú nhấp chuột.'
+        },
+        {
+          icon: '🛡️',
+          title: 'Bảo Vệ Bản Quyền',
+          description: 'Chúng tôi giúp bảo vệ âm nhạc của bạn với hệ thống nhận dạng nội dung và các biện pháp chống vi phạm bản quyền.'
+        },
+        {
+          icon: '🎧',
+          title: 'Quảng Bá Trước Khi Phát Hành',
+          description: 'Tạo sự mong đợi với các liên kết pre-save và công cụ quảng bá trước khi phát hành chính thức.'
+        },
+        {
+          icon: '📱',
+          title: 'Quản Lý Trên Di Động',
+          description: 'Quản lý danh mục, kiểm tra thống kê và nhận thanh toán từ thiết bị di động của bạn.'
+        },
+        {
+          icon: '🤝',
+          title: 'Hỗ Trợ Nghệ Sĩ',
+          description: 'Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn với bất kỳ câu hỏi hoặc vấn đề nào.'
+        }
+      ]
+    },
+    en: {
+      title: 'Platform Features',
+      subtitle: 'Everything you need to succeed in the digital music world',
+      items: [
+        {
+          icon: '🌐',
+          title: 'Global Reach',
+          description: 'Distribute your music to over 200 platforms including Spotify, Apple Music, TikTok, and more.'
+        },
+        {
+          icon: '📊',
+          title: 'Advanced Analytics',
+          description: 'Track your performance with detailed statistics and insights about your listeners and streams.'
+        },
+        {
+          icon: '💰',
+          title: 'Clear Royalties',
+          description: 'Receive 100% of your royalties with our premium plan. No hidden fees or complicated splits.'
+        },
+        {
+          icon: '🔄',
+          title: 'Automatic Updates',
+          description: 'Update your music and metadata across all platforms with a single click.'
+        },
+        {
+          icon: '🛡️',
+          title: 'Copyright Protection',
+          description: 'We help protect your music with content ID systems and anti-piracy measures.'
+        },
+        {
+          icon: '🎧',
+          title: 'Pre-Release Promotion',
+          description: 'Build anticipation with pre-save links and promotional tools before your official release.'
+        },
+        {
+          icon: '📱',
+          title: 'Mobile Management',
+          description: 'Manage your catalog, check statistics, and receive payments from your mobile device.'
+        },
+        {
+          icon: '🤝',
+          title: 'Artist Support',
+          description: 'Our team of experts is available to help you with any questions or issues.'
+        }
+      ]
+    }
+  },
+  
+  // Home page - Success Stories Section
+  successStories: {
+    vi: {
+      title: 'Câu Chuyện Thành Công',
+      subtitle: 'Chia sẻ từ các nghệ sĩ đã phát triển sự nghiệp với nền tảng của chúng tôi',
+      testimonials: [
+        {
+          name: 'Alex Rivers',
+          image: '/images/artist1.jpg',
+          role: 'Nhà sản xuất nhạc điện tử',
+          quote: 'Kể từ khi tham gia Mirai Ongaku, lượt stream của tôi đã tăng 400%. Mạng lưới phân phối của họ thật đáng kinh ngạc, và các công cụ phân tích giúp tôi hiểu khán giả của mình tốt hơn.'
+        },
+        {
+          name: 'Melody Chen',
+          image: '/images/artist2.jpg',
+          role: 'Ca sĩ - Nhạc sĩ',
+          quote: 'Tôi thích việc dễ dàng cập nhật các bản phát hành của mình trên tất cả các nền tảng. Đội ngũ luôn phản hồi nhanh chóng và tôi luôn được thanh toán đúng hạn. Không thể hài lòng hơn!'
+        },
+        {
+          name: 'The Nova Collective',
+          image: '/images/artist3.jpg',
+          role: 'Ban nhạc Indie',
+          quote: 'Chúng tôi chuyển sang Mirai Ongaku năm ngoái và đó là quyết định tuyệt vời nhất. Các công cụ quảng bá đã giúp chúng tôi tiếp cận nhiều người nghe mới và doanh thu của chúng tôi đã tăng gấp đôi.'
+        }
+      ]
+    },
+    en: {
+      title: 'Success Stories',
+      subtitle: 'Hear from artists who have grown their careers with our platform',
+      testimonials: [
+        {
+          name: 'Alex Rivers',
+          image: '/images/artist1.jpg',
+          role: 'Electronic Music Producer',
+          quote: 'Since joining Mirai Ongaku, my streams have increased by 400%. Their distribution network is incredible, and the analytics tools help me understand my audience better.'
+        },
+        {
+          name: 'Melody Chen',
+          image: '/images/artist2.jpg',
+          role: 'Singer-Songwriter',
+          quote: 'I love how easy it is to update my releases across all platforms. The team is always responsive and I get paid on time, every time. Couldn\'t be happier!'
+        },
+        {
+          name: 'The Nova Collective',
+          image: '/images/artist3.jpg',
+          role: 'Indie Band',
+          quote: 'We switched to Mirai Ongaku last year and it was the best decision we made. The promotional tools helped us reach new listeners and our revenue has doubled.'
+        }
+      ]
     }
   },
   
